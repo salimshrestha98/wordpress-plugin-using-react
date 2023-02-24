@@ -16,3 +16,22 @@
  *
  * @package Demo Plugin
  */
+
+add_action( 'admin_menu', 'dp_add_menu' );
+
+function dp_add_menu() {
+	add_menu_page(
+		'Demo Plugin',
+		'Demo Plugin',
+		'manage_options',
+		'demo_plugin',
+		'dp_render_page',
+		'',
+		'2'
+	);
+}
+
+
+function dp_render_page() {
+	include_once 'templates/page-template.php';
+}
