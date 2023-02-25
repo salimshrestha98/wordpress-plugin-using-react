@@ -35,3 +35,9 @@ function dp_add_menu() {
 function dp_render_page() {
 	include_once 'templates/page-template.php';
 }
+
+add_action( 'admin_enqueue_scripts', 'dp_add_assets' );
+
+function dp_add_assets() {
+	wp_enqueue_script( 'demo_plugin', plugin_dir_url( __FILE__ ) . 'build/main.js' );
+}
